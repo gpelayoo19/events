@@ -1,0 +1,93 @@
+.footer {
+    background: #0d0e0f;
+    padding: 100px 24px 40px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.desc {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.container h4 {
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+}
+
+.nav,
+.social,
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.nav a,
+.social a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav a:hover,
+.social a:hover {
+    color: #d4af37;
+}
+
+.contact p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.bottom p {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

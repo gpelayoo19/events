@@ -1,0 +1,90 @@
+.aboutPage {
+    padding-top: 100px;
+    background: #121414;
+    color: white;
+}
+
+.history {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    align-items: center;
+}
+
+.tag {
+    color: #d4af37;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.content h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 32px;
+    line-height: 1.1;
+}
+
+.content p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.imageBlock img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.values {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 100px 24px;
+    background: #0d0e0f;
+    text-align: center;
+}
+
+.valueItem {
+    max-width: 300px;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.valueItem h3 {
+    color: #d4af37;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.valueItem p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .history {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .imageBlock img {
+        height: 400px;
+    }
+
+    .values {
+        flex-direction: column;
+        gap: 60px;
+    }
+}

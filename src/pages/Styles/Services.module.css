@@ -1,0 +1,91 @@
+.servicesPage {
+    padding-top: 120px;
+    background: #121414;
+    min-height: 100vh;
+}
+
+.pageHeader {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    padding: 0 24px;
+}
+
+.preTitle {
+    color: #d4af37;
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 24px;
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+}
+
+.card {
+    background: #1a1c1c;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.imageWrapper {
+    height: 250px;
+    overflow: hidden;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardContent {
+    padding: 32px;
+}
+
+.cardCategory {
+    color: #d4af37;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.cardContent h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.cardContent p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.learnMore {
+    background: none;
+    border: none;
+    color: #d4af37;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,51 @@
+.contactPage {
+    padding: 150px 24px 100px;
+    background: #0a0a0a;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.info h1 {
+    font-size: 48px;
+    color: #d4af37;
+    margin-bottom: 24px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form input,
+.form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 16px 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form button {
+    background: #d4af37;
+    color: #0a0a0a;
+    border: none;
+    padding: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
