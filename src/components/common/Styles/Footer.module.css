@@ -56,7 +56,8 @@
 }
 
 .nav a:hover,
-.social a:hover {
+.social a:hover,
+.contact p:hover {
     color: #d4af37;
 }
 

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Header from './components/common/Header.jsx';
-import Footer from './components/common/Footer.jsx';
+import MainLayout from './layouts/MainLayout';
+
 import WhatsAppButton from './components/common/WhatsAppButton.jsx';
 import Home from './pages/Home.jsx';
 import Services from './pages/Services.jsx';
@@ -15,20 +15,18 @@ function App() {
   return (
     <>
       <Router>
-
-        <Header />
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/servicios" element={<Services />} />
-            <Route path="/nosotros" element={<About />} />
-            <Route path="/galeria" element={<Gallery />} />
-            <Route path="/contacto" element={<Contact />} />
+            <Route path="/" element={<MainLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/servicios" element={<Services />} />
+              <Route path="/nosotros" element={<About />} />
+              <Route path="/galeria" element={<Gallery />} />
+              <Route path="/contacto" element={<Contact />} />
+            </Route>
           </Routes>
         </main>
-        <WhatsAppButton phonenumber="573016985605" message="Hola, me gustaría solicitar una cotización" />
-        <Footer />
-
+        <WhatsAppButton phoneNumber="573016985605" message="Hola, me gustaría solicitar una cotización" />
       </Router>
     </>
   )

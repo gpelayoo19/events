@@ -6,8 +6,8 @@ const Footer = () => {
         <footer className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.brand}>
-                    <Link to="/" className={styles.logo}>LUXE EVENTS</Link>
-                    <p className={styles.desc}>Transformando visiones en realidades atemporales desde 2014. Expertos en el arte de la celebración.</p>
+                    <Link to="/" className={styles.logo}>Eventos ODC</Link>
+                    <p className={styles.desc}>Cuéntanos tu idea y nosotros nos encargamos de hacerla realidad con creatividad, logística y perfección en cada detalle.</p>
                 </div>
 
                 <div className={styles.nav}>
@@ -28,13 +28,12 @@ const Footer = () => {
 
                 <div className={styles.contact}>
                     <h4>CONTACTO</h4>
-                    <p>Av. de la Reforma 250, CDMX</p>
-                    <p>+52 (55) 1234 5678</p>
-                    <p>hello@luxeevents.com</p>
+                    <p>+57 3682920458</p>
+                    <p>fakeemail@gmail.com</p>
                 </div>
             </div>
             <div className={styles.bottom}>
-                <p>&copy; {new Date().getFullYear()} LUXE EVENTS. ALL RIGHTS RESERVED.</p>
+                <p>&copy; {new Date().getFullYear()} EVENTOS ODC. ALL RIGHTS RESERVED.</p>
             </div>
         </footer>
     );

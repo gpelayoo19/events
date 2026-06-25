@@ -51,22 +51,6 @@
     color: #d4af37;
 }
 
-.cta {
-    background: #d4af37;
-    color: #0a0a0a;
-    padding: 10px 24px;
-    text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
-    transition: transform 0.3s ease;
-}
-
-.ctaMobile {
-    display: none;
-}
-
 .hamburger {
     display: none;
 }
@@ -89,19 +73,6 @@
         left: 0;
     }
 
-    .cta {
-        display: none;
-    }
-
-    .ctaMobile {
-        display: block;
-        margin-top: 20px;
-        background: #d4af37;
-        padding: 12px 40px;
-        color: #0a0a0a;
-        text-decoration: none;
-    }
-
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -116,5 +87,17 @@
         height: 2px;
         background: #d4af37;
         transition: 0.3s;
+    }
+
+    .barClose:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .barClose:nth-child(2) {
+        opacity: 0;
+    }
+
+    .barClose:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }

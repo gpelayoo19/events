@@ -1,5 +1,5 @@
 .aboutPage {
-    padding-top: 100px;
+    padding-top: 50px;
     background: #121414;
     color: white;
 }
@@ -11,52 +11,105 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 24px;
-    align-items: center;
+    align-items: start;
 }
 
 .tag {
     color: #d4af37;
-    letter-spacing: 4px;
-    font-size: 12px;
+    letter-spacing: 1.5px;
+    font-size: 14px;
     margin-bottom: 16px;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.content h1 {
+.tag::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: #d4af37;
+    flex-shrink: 0;
+}
+
+.title {
     font-size: clamp(32px, 5vw, 56px);
     margin-bottom: 32px;
     line-height: 1.1;
 }
 
-.content p {
-    color: rgba(255, 255, 255, 0.7);
+.text {
     line-height: 1.8;
     margin-bottom: 24px;
     font-size: 16px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.imageBlock {
+    position: relative;
+    overflow: hidden;
+    align-self: stretch;
+    min-height: 500px;
 }
 
 .imageBlock img {
     width: 100%;
-    height: 600px;
+    height: 100%;
     object-fit: cover;
     border: 1px solid rgba(212, 175, 55, 0.2);
+    display: block;
+}
+
+.imageBlock::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left, transparent 60%, #121414 100%);
+    pointer-events: none;
 }
 
 .values {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    padding: 100px 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     background: #0d0e0f;
-    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .valueItem {
-    max-width: 300px;
+    padding: 60px 40px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.valueItem:last-child {
+    border-right: none;
+}
+
+.valueItem:hover {
+    background: rgba(212, 175, 55, 0.04);
+}
+
+.valueItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 0;
+    background: #d4af37;
+    transition: height 0.3s ease;
+}
+
+.valueItem:hover::before {
+    height: 40px;
 }
 
 .icon {
-    font-size: 40px;
+    font-size: 36px;
     margin-bottom: 24px;
     display: block;
 }
@@ -64,6 +117,7 @@
 .valueItem h3 {
     color: #d4af37;
     letter-spacing: 2px;
+    font-size: 12px;
     margin-bottom: 16px;
 }
 
@@ -71,6 +125,48 @@
     color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
     line-height: 1.6;
+    max-width: 240px;
+    margin: 0 auto;
+}
+
+.ctaGroup {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.ctaPrimary {
+    padding: 14px 32px;
+    background: #d4af37;
+    color: #121414;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.ctaPrimary:hover {
+    background: #c49b2a;
+}
+
+.ctaSecondary {
+    padding: 14px 32px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ctaSecondary:hover {
+    border-color: #d4af37;
+    color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -84,7 +180,38 @@
     }
 
     .values {
+        grid-template-columns: 1fr;
+    }
+
+    .valueItem {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .valueItem:last-child {
+        border-bottom: none;
+    }
+
+    .valueItem::before {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        transform: none;
+    }
+
+    .valueItem:hover::before {
+        width: 40px;
+        height: 1px;
+    }
+
+    .ctaGroup {
         flex-direction: column;
-        gap: 60px;
+    }
+
+    .ctaPrimary,
+    .ctaSecondary {
+        text-align: center;
     }
 }

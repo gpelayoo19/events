@@ -33,8 +33,6 @@ const Header = () => {
                     ))}
                 </nav>
 
-                <Link to="/contacto" className={styles.cta}>Cotizar</Link>
-
                 <button className={styles.hamburger} onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={isOpen}>
                     <span className={isOpen ? styles.barClose : ''}></span>
                     <span className={isOpen ? styles.barClose : ''}></span>
