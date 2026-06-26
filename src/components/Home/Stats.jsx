@@ -1,6 +1,6 @@
 import styles from './Styles/Stats.module.css';
 
-const Stats = ({ items }) => {
+const Stats = ({ items = [] }) => {
     return (
         <section className={styles.stats}>
             <div className={styles.container}>

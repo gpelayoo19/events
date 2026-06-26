@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Styles/GalleryPreview.module.css';
 import img1 from '../../assets/images/Image11.jpeg';
 import img2 from '../../assets/images/Gallery1.jpeg';
@@ -13,19 +14,42 @@ const images = [
     { id: 4, src: img4, alt: 'Imagen 4' },
 ];
 
+const lastImage = images.length - 1;
+
 const GalleryPreview = () => {
     const [current, setCurrent] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
+        if (isPaused) return;
+
         const interval = setInterval(() => {
-            setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+            setCurrent((c) => (c === lastImage ? 0 : c + 1));
         }, 3000);
 
         return () => clearInterval(interval);
-    }, []);
 
-    const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
-    const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+    }, [isPaused]);
+
+    const pauseCarousel = () => {
+        setIsPaused(true);
+
+        setTimeout(() => {
+            setIsPaused(false);
+        }, 5000);
+    };
+
+    const prev = () => {
+        pauseCarousel();
+
+        setCurrent((c) => (c === 0 ? lastImage : c - 1));
+    };
+
+    const next = () => {
+        pauseCarousel();
+
+        setCurrent((c) => (c === lastImage ? 0 : c + 1));
+    };
 
     return (
         <section className={styles.gallery}>
@@ -40,15 +64,18 @@ const GalleryPreview = () => {
                 </button>
 
                 <div className={styles.track}>
-                    {images.map((image, index) => (
-                        <div
-                            key={image.id}
-                            className={`${styles.slide} ${index === current ? styles.active : ''}`}
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={images[current].id}
+                            className={styles.slide}
+                            initial={{ opacity: 0, x: 60 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -60 }}
+                            transition={{ duration: 0.6, ease: 'easeInOut' }}
                         >
-                            <img src={image.src} alt={image.alt} />
-                            <div className={styles.overlay}></div>
-                        </div>
-                    ))}
+                            <img src={images[current].src} alt={images[current].alt} />
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
 
                 <button className={styles.arrowRight} onClick={next} aria-label="Siguiente">
@@ -57,11 +84,16 @@ const GalleryPreview = () => {
             </div>
 
             <div className={styles.dots}>
-                {images.map((_, index) => (
-                    <span
-                        key={index}
+                {images.map((image, index) => (
+                    <button
+                        type="button"
+                        key={image.id}
+                        aria-pressed={index === current}
                         className={`${styles.dot} ${index === current ? styles.dotActive : ''}`}
-                        onClick={() => setCurrent(index)}
+                        onClick={() => {
+                            pauseCarousel();
+                            setCurrent(index);
+                        }}
                         aria-label={`Ir a la imagen ${index + 1}`}
                     />
                 ))}
@@ -72,7 +104,7 @@ const GalleryPreview = () => {
                     Ver más
                 </Link>
             </div>
-        </section>
+        </section >
     )
 
 }

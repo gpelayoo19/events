@@ -1,20 +1,23 @@
 import styles from './Styles/Card.module.css';
 
-const Card = ({ image, category, title, description, children }) => {
+const Card = ({ image, imageAlt, children }) => {
     return (
-        <div className={styles.card}>
+        <article className={styles.card}>
             {image && (
                 <div className={styles.imageWrapper}>
-                    <img src={image} alt={title} />
+                    <img
+                        src={image}
+                        alt={imageAlt}
+                        loading="lazy"
+                        decoding='async'
+                    />
                 </div>
             )}
+
             <div className={styles.content}>
-                {category && <p className={styles.category}>{category}</p>}
-                {title && <h3 className={styles.title}>{title}</h3>}
-                {description && <p className={styles.description}>{description}</p>}
                 {children}
             </div>
-        </div>
+        </article>
     );
 };
 

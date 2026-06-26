@@ -1,4 +1,6 @@
 import styles from './Styles/Services.module.css';
+import { Link } from 'react-router-dom';
+import Card from '../components/UI/Card.jsx'
 
 import Image1 from '../assets/images/Image3.jpeg';
 import Image2 from '../assets/images/service.jpeg';
@@ -49,25 +51,26 @@ const services = [
 const Services = () => {
     return (
         <div className={styles.servicesPage}>
-            <header className={styles.pageHeader}>
-                <p className={styles.preTitle}>EQUIPO PROFESIONAL Y CREATIVO</p>
+            <section className={styles.pageHeader}>
+                <span className={styles.preTitle}>EQUIPO PROFESIONAL Y CREATIVO</span>
                 <h1 className={styles.title}>Nuestros Servicios</h1>
                 <p className={styles.description}>Cada detalle cuenta y nosotros lo hacemos posible</p>
-            </header>
-
+            </section>
             <section className={styles.grid}>
                 {services.map((service) => (
-                    <div key={service.id} className={styles.card}>
-                        <div className={styles.imageWrapper}>
-                            <img src={service.image} alt={service.title} />
-                        </div>
-                        <div className={styles.cardContent}>
-                            <p className={styles.cardCategory}></p>
-                            <h3>{service.title}</h3>
-                            <p>{service.description}</p>
-                            <button className={styles.learnMore}>SABER MÁS →</button>
-                        </div>
-                    </div>
+                    <Card
+                        key={service.id}
+                        image={service.image}
+                        imageAlt={service.title}
+                    >
+                        <h3 className={styles.cardTitle}>{service.title}</h3>
+                        <p className={styles.cardDescription}>{service.description}</p>
+
+                        <Link to="/contacto" className={styles.learnMore}>
+                            Solicitar cotización
+                        </Link>
+
+                    </Card>
                 ))}
             </section>
         </div>

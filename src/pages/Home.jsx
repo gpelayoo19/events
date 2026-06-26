@@ -5,7 +5,7 @@ import GalleryPreview from '../components/Home/GalleryPreview.jsx';
 import imgHero from '../assets/images/img1.jpeg';
 
 const statsData = [
-    { id: 1, number: '10+', label: 'Años de Excelencia' },
+    { id: 1, number: '10+', label: 'Años de Experiencia' },
     { id: 2, number: '500+', label: 'Eventos Realizados' },
     { id: 3, number: '100%', label: 'Satisfacción Total' },
 ];
