@@ -1,0 +1,128 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.input,
+.textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 12px 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    width: 100%;
+}
+
+.input:focus,
+.textarea:focus {
+    border-bottom-color: #d4af37;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.input:-webkit-autofill,
+.textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #0a0a0a inset;
+    -webkit-text-fill-color: white;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.inputError {
+    border-bottom-color: #e05252;
+}
+
+.error {
+    color: #e05252;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.errorMsg {
+    color: #e05252;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.successContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 24px;
+    gap: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    min-height: 400px;
+}
+
+.successIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.successTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: white;
+}
+
+.successText {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 300px;
+}
+
+.successBtn {
+    margin-top: 8px;
+    background: none;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #d4af37;
+    padding: 12px 28px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.successBtn:hover {
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.08);
+}

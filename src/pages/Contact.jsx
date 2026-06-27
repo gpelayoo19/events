@@ -1,26 +1,55 @@
 import styles from './Styles/Contact.module.css';
+import ContactForm from '../components/UI/ContactForm.jsx';
 
 const Contact = () => {
     return (
         <div className={styles.contactPage}>
             <div className={styles.container}>
-                <div className={styles.info}>
-                    <h1>CONTÁCTANOS</h1>
-                    <p>Permítanos convertir su visión en una realidad sofisticada.</p>
+
+                <div>
+                    <span className={styles.preTitle}>
+                        Estamos para ayudarte
+                    </span>
+
+                    <h1 className={styles.title}>
+                        Contáctanos
+                    </h1>
+
+                    <p className={styles.subtitle}>
+                        Hagamos realidad tu próximo evento
+                    </p>
+
                     <div className={styles.details}>
-                        <p><strong>UBICACIÓN:</strong> Av. de la Reforma 250, CDMX</p>
-                        <p><strong>TELÉFONO:</strong> +52 (55) 1234 5678</p>
-                        <p><strong>EMAIL:</strong> hello@luxeevents.com</p>
+                        <div className={styles.detailItem}>
+                            <span className={styles.detailLabel}>
+                                Teléfono
+                            </span>
+
+                            <a
+                                href="tel:+573371234567"
+                                className={styles.detailValue}
+                            >
+                                +57 337 123 567
+                            </a>
+                        </div>
+
+                        <div className={styles.detailItem}>
+                            <span className={styles.detailLabel}>
+                                Email
+                            </span>
+
+                            <a
+                                href="mailto:fakeemail@gmail.com"
+                                className={styles.detailValue}
+                            >
+                                fakeemail@gmail.com
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <form className={styles.form}>
-                    <input type="text" placeholder="NOMBRE COMPLETO" />
-                    <input type="email" placeholder="EMAIL" />
-                    <input type="tel" placeholder="TELÉFONO" />
-                    <textarea placeholder="CUÉNTANOS SOBRE TU EVENTO"></textarea>
-                    <button type="submit">ENVIAR MENSAJE →</button>
-                </form>
+                <ContactForm />
+
             </div>
         </div>
     );

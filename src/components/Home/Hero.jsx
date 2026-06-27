@@ -11,7 +11,7 @@ const Hero = ({ title, subtitle, preTitle, backgroundImage }) => {
                 <p className={styles.subtitle}>{subtitle}</p>
                 <div className={styles.actions}>
                     <Button to="/contacto" variant="primary">Solicitar Cotización</Button>
-                    <Button to="/galeria" variant="secondary">Ver Portafolio</Button>
+                    <Button to="/servicios" variant="secondary">Ver Portafolio</Button>
                 </div>
             </div>
         </section>

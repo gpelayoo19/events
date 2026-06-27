@@ -100,7 +100,7 @@ const GalleryPreview = () => {
             </div>
 
             <div className={styles.cta}>
-                <Link to="/galeria" className={styles.ctaBtn}>
+                <Link to="/servicios" className={styles.ctaBtn}>
                     Ver más
                 </Link>
             </div>

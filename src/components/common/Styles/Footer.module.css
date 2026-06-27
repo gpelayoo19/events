@@ -39,7 +39,7 @@
     text-transform: uppercase;
 }
 
-.nav,
+.links,
 .social,
 .contact {
     display: flex;
@@ -47,23 +47,24 @@
     gap: 16px;
 }
 
-.nav a,
+.links a,
 .social a {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-size: 14px;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
 }
 
-.nav a:hover,
+.links a:hover,
 .social a:hover,
-.contact p:hover {
+.contact a:hover {
     color: #d4af37;
 }
 
-.contact p {
+.contact a {
     color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
+    text-decoration: none;
 }
 
 .bottom {

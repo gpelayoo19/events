@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Styles/Button.module.css';
 
-const Button = ({ children, to, variant = 'primary', type = 'button', onClick }) => {
+const Button = ({ children, to, variant = 'primary', type = 'button', onClick, disabled }) => {
     const className = `${styles.btn} ${styles[variant]}`;
 
     if (to) {
@@ -9,7 +9,7 @@ const Button = ({ children, to, variant = 'primary', type = 'button', onClick })
     }
 
     return (
-        <button type={type} className={className} onClick={onClick}>
+        <button type={type} className={className} onClick={onClick} disabled={disabled}>
             {children}
         </button>
     );
