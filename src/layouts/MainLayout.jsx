@@ -10,10 +10,7 @@ const MainLayout = () => {
             <main>
                 <Outlet />
             </main>
-            <WhatsAppButton
-                phonenumber="573016985605"
-                message="Hola, me gustaría solicitar una cotización"
-            />
+            <WhatsAppButton />
             <Footer />
         </>
     );

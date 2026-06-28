@@ -24,7 +24,7 @@ function App() {
             </Route>
           </Routes>
         </main>
-        <WhatsAppButton phoneNumber="573016985605" message="Hola, me gustaría solicitar una cotización" />
+        <WhatsAppButton />
       </Router>
     </>
   )
