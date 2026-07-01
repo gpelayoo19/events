@@ -1,6 +1,7 @@
 import styles from './Styles/Services.module.css';
 import { Link } from 'react-router-dom';
-import Card from '../components/UI/Card.jsx'
+import Card from '../components/UI/Card.jsx';
+import SEO from '../components/common/SEO.jsx';
 
 import Image1 from '../assets/images/Image3.jpeg';
 import Image2 from '../assets/images/service.jpeg';
@@ -51,6 +52,11 @@ const services = [
 const Services = () => {
     return (
         <div className={styles.servicesPage}>
+            <SEO
+                title="Servicios"
+                description="Producción de eventos, decoración, catering, modelos, arquitectura efímera y litografía en Pereira. Conoce todos nuestros servicios."
+                url="/servicios"
+            />
             <section className={styles.pageHeader}>
                 <span className={styles.preTitle}>EQUIPO PROFESIONAL Y CREATIVO</span>
                 <h1 className={styles.title}>Nuestros Servicios</h1>

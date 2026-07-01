@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Styles/About.module.css';
 import image1 from '../assets/images/Image10.jpeg';
+import SEO from '../components/common/SEO.jsx';
 
 const values = [
     {
@@ -26,6 +27,11 @@ const values = [
 const About = () => {
     return (
         <div className={styles.aboutPage}>
+            <SEO
+                title="Nosotros"
+                description="Conoce al equipo de Eventos ODC. Más de 10 años de experiencia en producción de eventos corporativos y sociales en Pereira, Colombia."
+                url="/nosotros"
+            />
             <section className={styles.history}>
                 <div className={styles.content}>
                     <span className={styles.tag}>Producción integral de eventos</span>
@@ -39,7 +45,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className={styles.imageBlock}>
-                    <img src={image1} alt="Nosotros" />
+                    <img src={image1} alt="Equipo de Eventos ODC realizando el montaje de un evento corporativo" loading="lazy" decoding="async" />
                 </div>
             </section>
 

@@ -1,5 +1,8 @@
 export const company = {
     name: 'Eventos ODC',
+    description:
+        'Somos especialistas en producción de eventos corporativos, sociales y masivos en Pereira.Logística, decoración, catering, modelos y más.'
+    ,
     phone: {
         display: '+57 301 698 5605',
         link: '573016985605'

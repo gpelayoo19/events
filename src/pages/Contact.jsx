@@ -1,9 +1,16 @@
 import styles from './Styles/Contact.module.css';
 import ContactForm from '../components/UI/ContactForm.jsx';
+import { company } from '../config/company.js';
+import SEO from '../components/common/SEO.jsx';
 
 const Contact = () => {
     return (
         <div className={styles.contactPage}>
+            <SEO
+                title="Contacto"
+                description="Contáctanos para cotizar tu próximo evento. Estamos en Pereira, Risaralda. Llámanos o escríbenos por WhatsApp."
+                url="/contacto"
+            />
             <div className={styles.container}>
 
                 <div>
@@ -26,10 +33,10 @@ const Contact = () => {
                             </span>
 
                             <a
-                                href="tel:+573371234567"
+                                href={`tel:${company.phone.link}`}
                                 className={styles.detailValue}
                             >
-                                +57 337 123 567
+                                {company.phone.display}
                             </a>
                         </div>
 
@@ -39,10 +46,10 @@ const Contact = () => {
                             </span>
 
                             <a
-                                href="mailto:fakeemail@gmail.com"
+                                href={`mailto:${company.email.link}`}
                                 className={styles.detailValue}
                             >
-                                fakeemail@gmail.com
+                                {company.email.display}
                             </a>
                         </div>
                     </div>

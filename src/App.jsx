@@ -1,32 +1,33 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { lazy, Suspense } from 'react';
+import ScrollToTop from './components/common/ScrollToTop.jsx';
 import MainLayout from './layouts/MainLayout';
-
-import WhatsAppButton from './components/common/WhatsAppButton.jsx';
-import Home from './pages/Home.jsx';
-import Services from './pages/Services.jsx';
-import About from './pages/About.jsx';
-import Contact from './pages/Contact.jsx';
 import './index.css';
+
+const Home = lazy(() => import('./pages/Home.jsx'));
+const Services = lazy(() => import('./pages/Services.jsx'));
+const About = lazy(() => import('./pages/About.jsx'));
+const Contact = lazy(() => import('./pages/Contact.jsx'));
+const NotFound = lazy(() => import('./pages/NotFound.jsx'));
+
 
 function App() {
 
   return (
-    <>
-      <Router>
-        <main>
-          <Routes>
-            <Route path="/" element={<MainLayout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/servicios" element={<Services />} />
-              <Route path="/nosotros" element={<About />} />
-              <Route path="/contacto" element={<Contact />} />
-            </Route>
-          </Routes>
-        </main>
-        <WhatsAppButton />
-      </Router>
-    </>
+    <Router>
+      <ScrollToTop />
+      <Suspense fallback={<div style={{ background: '#121414', minHeight: '100vh' }} />}>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path="servicios" element={<Services />} />
+            <Route path="nosotros" element={<About />} />
+            <Route path="contacto" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </Router>
   )
 }
 

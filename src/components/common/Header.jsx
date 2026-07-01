@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Styles/Header.module.css';
+import { company } from '../../config/company';
 
 const links = [
     { to: '/', label: 'Inicio' },
@@ -54,7 +55,6 @@ const Header = () => {
         };
     }, [isOpen]);
 
-    // Bloquear scroll cuando el menú está abierto
     useEffect(() => {
         document.body.style.overflow = isOpen ? 'hidden' : '';
 
@@ -75,7 +75,7 @@ const Header = () => {
                     className={styles.logo}
                     aria-label="Ir al inicio"
                 >
-                    Eventos ODC
+                    {company.name}
                 </Link>
 
                 <nav
